@@ -229,7 +229,9 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
       //today
       return i18nObjInLocale(locale)['today'];
     } else if (date.year == now.year) {
-      if (locale == LocaleType.zh) {
+      if (locale == LocaleType.tw) {
+        return formatDate(date, [mm, '月', dd, '日 ', D], locale);
+      } else if (locale == LocaleType.zh) {
         return formatDate(date, [mm, '月', dd, '日 ', D], locale);
       } else if (locale == LocaleType.nl) {
         return formatDate(date, [D, ' ', dd, ' ', M], locale);
@@ -249,7 +251,9 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
         return formatDate(date, [D, ' ', M, ' ', dd], locale);
       }
     } else {
-      if (locale == LocaleType.zh) {
+      if (locale == LocaleType.tw) {
+        return formatDate(date, [yyyy, '年', mm, '月', dd, '日 ', D], locale);
+      } else if (locale == LocaleType.zh) {
         return formatDate(date, [yyyy, '年', mm, '月', dd, '日 ', D], locale);
       } else if (locale == LocaleType.nl) {
         return formatDate(date, [D, ' ', dd, ' ', M, ' ', yyyy], locale);
